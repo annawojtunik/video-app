@@ -4,10 +4,8 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
     header: {
-        flexGrow: 1,
         textAlign: 'center',
         padding: theme.spacing(2),
-        backgroundColor: '#7f7c86',
     },
     title: {
         fontWeight: 300,

@@ -10,9 +10,6 @@ const styles = theme => ({
     root: {
         flexGrow: 1,
     },
-    container: {
-        backgroundColor: '#7f7c86',
-    },
 });
 
 class VideoList extends React.Component {
@@ -25,13 +22,6 @@ class VideoList extends React.Component {
         this.state = {
             showPlayer: false,
             video: undefined,
-            sources: {
-                type: 'video',
-                sources: [{
-                        src: '347187416',
-                        provider: 'vimeo',
-                },],
-            }
         }
     }
 
@@ -70,7 +60,7 @@ class VideoList extends React.Component {
         const { video } = this.state;
 
         return (
-            <Container className={classes.container}>
+            <Container>
                 <Grid container className={classes.root} spacing={3}>
                     {data.map((tile, index) => (
                         <VideoItem key={index} openPlayer={this.handleVideo} video={tile} />
