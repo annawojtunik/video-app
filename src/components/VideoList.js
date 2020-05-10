@@ -20,7 +20,6 @@ class VideoList extends React.Component {
         this.handleVideo = this.handleVideo.bind(this);
 
         this.state = {
-            showPlayer: false,
             video: undefined,
         }
     }
