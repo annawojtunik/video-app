@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
     },
     title: {
         fontWeight: 300,
-        color: '#000',
+        color: '#f5e0e6',
     },
   }));
 

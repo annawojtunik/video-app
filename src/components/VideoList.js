@@ -36,7 +36,6 @@ class VideoList extends React.Component {
     handleVideo(tile) {
         const videoData = {
             title: tile.title,
-            id: tile.video_id,
             description: tile.description,
             sources: {
                 type: 'video',
@@ -61,8 +60,8 @@ class VideoList extends React.Component {
         return (
             <Container>
                 <Grid container className={classes.root} spacing={3}>
-                    {data.map((tile, index) => (
-                        <VideoItem key={index} openPlayer={this.handleVideo} video={tile} />
+                    {data.map((tile) => (
+                        <VideoItem key={tile.video_id} openPlayer={this.handleVideo} video={tile} />
                     ))}
                 </Grid>
                 <Player

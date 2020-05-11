@@ -7,33 +7,33 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import Video from './Video';
 
 const useStyles = makeStyles((theme) => ({
-  content: {
-    paddingTop: 0,
-  },
-  description: {
-    paddingTop: theme.spacing(2),
-  },
+    content: {
+        paddingTop: 0,
+    },
+    description: {
+        paddingTop: theme.spacing(2),
+    },
 }));
 
 function Player({open, close, video}) {
     const classes = useStyles();
     return (
-      <React.Fragment>
-        { video &&
-        <Dialog
-          open={open}
-          onClose={close}
-        >
-          <DialogTitle>{video.title}</DialogTitle>
-          <DialogContent className={classes.content}>
-            <Video sources={video.sources} />
-            <DialogContentText className={classes.description}>
-              {video.description}
-            </DialogContentText>
-          </DialogContent>
-        </Dialog>
-        }
-      </React.Fragment>
+        <React.Fragment>
+            { video &&
+                <Dialog
+                  open={open}
+                  onClose={close}
+                >
+                    <DialogTitle>{video.title}</DialogTitle>
+                    <DialogContent className={classes.content}>
+                        <Video sources={video.sources} />
+                        <DialogContentText className={classes.description}>
+                            {video.description}
+                        </DialogContentText>
+                    </DialogContent>
+                </Dialog>
+            }
+        </React.Fragment>
     );
 }
 
