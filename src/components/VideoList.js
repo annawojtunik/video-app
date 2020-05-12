@@ -60,8 +60,8 @@ class VideoList extends React.Component {
         return (
             <Container>
                 <Grid container className={classes.root} spacing={3}>
-                    {data.map((tile) => (
-                        <VideoItem key={tile.video_id} openPlayer={this.handleVideo} video={tile} />
+                    {data.map((tile, index) => (
+                        <VideoItem key={`video-${index}`} openPlayer={this.handleVideo} video={tile} />
                     ))}
                 </Grid>
                 <Player
