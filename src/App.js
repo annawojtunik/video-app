@@ -20,7 +20,7 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-        fetch('/database.json')
+        fetch('https://annawojtunik.github.io/video-app/database.json')
         .then(response => response.json())
         .then(data => this.setState({ videoData: data }));
     }
