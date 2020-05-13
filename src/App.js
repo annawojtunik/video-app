@@ -1,28 +1,43 @@
 import React from 'react';
 import {createMuiTheme} from '@material-ui/core/styles';
-import { makeStyles } from '@material-ui/core/styles';
+import withStyles from "@material-ui/styles/withStyles";
 import {ThemeProvider} from '@material-ui/styles';
 import Header from './components/Header';
 import VideoList from './components/VideoList'
 
 const theme = createMuiTheme();
 
-const useStyles = makeStyles((theme) => ({
+const styles = () => ({
     app: {
         backgroundColor: '#7f7c86',
     },
-}));
+});
 
-function App() {
-    const classes = useStyles();
-    return (
-        <div className={classes.app}>
-            <ThemeProvider theme={theme}>
-                <Header />
-                <VideoList />
-            </ThemeProvider>
-        </div>
-    );
+class App extends React.Component {
+
+    state = {
+        videoData: []
+    }
+
+    componentDidMount() {
+        fetch('/database.json')
+        .then(response => response.json())
+        .then(data => this.setState({ videoData: data }));
+    }
+
+    render() {
+        const { classes } = this.props;
+        const { videoData } = this.state;
+
+        return (
+            <div className={classes.app}>
+                <ThemeProvider theme={theme}>
+                    <Header />
+                    <VideoList data={videoData} />
+                </ThemeProvider>
+            </div>
+        );
+    }
 }
 
-export default App;
+export default (withStyles(styles)(App));

@@ -7,7 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
     cardContent: {
         minHeight: 120,
     },
@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
 function VideoItem({video, openPlayer}) {
     const classes = useStyles();
     return (
-        <Grid item xs={12} sm={6} md={4} lg={3}>
+        <Grid item xs={12} sm={6} md={4}>
             <Card onClick={() => openPlayer(video)}>
                 <CardActionArea>
                     <CardMedia

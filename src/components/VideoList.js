@@ -1,12 +1,11 @@
 import React from 'react';
 import withStyles from "@material-ui/styles/withStyles";
 import Grid from '@material-ui/core/Grid';
-import data from '../database.json';
 import Container from '@material-ui/core/Container';
 import VideoItem from './VideoItem';
 import Player from './Player';
 
-const styles = theme => ({
+const styles = () => ({
     root: {
         flexGrow: 1,
     },
@@ -16,7 +15,6 @@ class VideoList extends React.Component {
 
     constructor(props) {
         super(props);
-        this.closePlayer = this.closePlayer.bind(this);
         this.handleVideo = this.handleVideo.bind(this);
 
         this.state = {
@@ -54,7 +52,7 @@ class VideoList extends React.Component {
     }
 
     render() {
-        const { classes } = this.props;
+        const { classes, data } = this.props;
         const { video } = this.state;
 
         return (
