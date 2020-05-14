@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
@@ -16,9 +16,9 @@ const useStyles = makeStyles(() => ({
 
 function Loading() {
     const classes = useStyles();
-    let array = [];
+    let loading = [];
     for(let i = 0; i < 6; i++) {
-        array.push(
+        loading.push(
         <Grid key={i} item xs={12} sm={6} md={4}>
             <Card>
                 <Skeleton animation="wave" variant="rect" className={classes.media} />
@@ -35,9 +35,9 @@ function Loading() {
     }
 
     return (
-        <React.Fragment>
-            {array}
-        </React.Fragment>
+        <Fragment>
+            {loading}
+        </Fragment>
   );
 }
 

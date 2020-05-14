@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     },
     button: {
         marginLeft: theme.spacing(1),
-        marginBottom: 2,
+        marginBottom: 4,
         color: '#f5e0e6',
     },
     icon:  {

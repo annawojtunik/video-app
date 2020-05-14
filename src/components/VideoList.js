@@ -2,6 +2,7 @@ import React from 'react';
 import withStyles from "@material-ui/styles/withStyles";
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
+
 import VideoItem from './VideoItem';
 import Player from './Player';
 import Loading from './Loading';

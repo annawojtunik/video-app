@@ -1,10 +1,11 @@
 import React from 'react';
-import {createMuiTheme} from '@material-ui/core/styles';
+import { createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
 import withStyles from "@material-ui/styles/withStyles";
-import {ThemeProvider} from '@material-ui/styles';
-import Header from './components/Header';
-import VideoList from './components/VideoList'
-import Footer from './components/Footer';
+
+import Header from './Header';
+import VideoList from './VideoList'
+import Footer from './Footer';
 
 const theme = createMuiTheme();
 
