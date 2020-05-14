@@ -4,6 +4,7 @@ import withStyles from "@material-ui/styles/withStyles";
 import {ThemeProvider} from '@material-ui/styles';
 import Header from './components/Header';
 import VideoList from './components/VideoList'
+import Footer from './components/Footer';
 
 const theme = createMuiTheme();
 
@@ -40,6 +41,7 @@ class App extends React.Component {
                 <ThemeProvider theme={theme}>
                     <Header />
                     <VideoList data={videoData} loaded={loaded} />
+                    <Footer />
                 </ThemeProvider>
             </div>
         );
