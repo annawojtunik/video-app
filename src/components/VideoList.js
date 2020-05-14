@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import VideoItem from './VideoItem';
 import Player from './Player';
+import Loading from './Loading';
 
 const styles = () => ({
     root: {
@@ -46,18 +47,21 @@ class VideoList extends React.Component {
         this.setState(prevState => (
             {
                 ...prevState,
-                video: videoData,
+                video: videoData
             }
         ))
     }
 
     render() {
-        const { classes, data } = this.props;
+        const { classes, data, loaded } = this.props;
         const { video } = this.state;
 
         return (
             <Container>
                 <Grid container className={classes.root} spacing={3}>
+                    { !loaded &&
+                        <Loading />
+                    }
                     {data.map((tile, index) => (
                         <VideoItem key={`video-${index}`} openPlayer={this.handleVideo} video={tile} />
                     ))}

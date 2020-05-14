@@ -10,6 +10,9 @@ const useStyles = makeStyles((theme) => ({
     title: {
         fontWeight: 300,
         color: '#f5e0e6',
+        [theme.breakpoints.down('xs')]: {
+            fontSize: 30,
+        },
     },
   }));
 
